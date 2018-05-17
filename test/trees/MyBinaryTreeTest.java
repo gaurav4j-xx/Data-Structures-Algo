@@ -20,18 +20,32 @@ public class MyBinaryTreeTest {
 
     @Test
     public void addNodeAndInOrderTraversal_Example2() {
-        MyBinaryTree myBinaryTree2 = new MyBinaryTree();
+        MyBinaryTree myBinaryTree = new MyBinaryTree();
 
-        myBinaryTree2.addNode(500);
-        myBinaryTree2.addNode(100);
-        myBinaryTree2.addNode(30);
-        myBinaryTree2.addNode(40);
-        myBinaryTree2.addNode(50);
-        myBinaryTree2.addNode(250);
-        myBinaryTree2.addNode(300);
-        myBinaryTree2.addNode(1);
-        myBinaryTree2.addNode(210);
+        myBinaryTree.addNode(500);
+        myBinaryTree.addNode(100);
+        myBinaryTree.addNode(30);
+        myBinaryTree.addNode(40);
+        myBinaryTree.addNode(50);
+        myBinaryTree.addNode(250);
+        myBinaryTree.addNode(300);
+        myBinaryTree.addNode(1);
+        myBinaryTree.addNode(210);
 
-        myBinaryTree2.inOrderTraverse();
+        myBinaryTree.inOrderTraverse();
+    }
+
+    @Test
+    public void emptyTreeTraversal() {
+        MyBinaryTree myBinaryTree = new MyBinaryTree();
+        myBinaryTree.inOrderTraverse();
+
+    }
+
+    @Test
+    public void onlyRootNode() {
+        MyBinaryTree myBinaryTree = new MyBinaryTree();
+        myBinaryTree.addNode(1);
+        myBinaryTree.inOrderTraverse();
     }
 }
