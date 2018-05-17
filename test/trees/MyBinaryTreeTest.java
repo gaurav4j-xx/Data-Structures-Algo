@@ -2,12 +2,10 @@ package trees;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class MyBinaryTreeTest {
 
     @Test
-    public void addNode() {
+    public void addNodeAndInOrderTraversal_Example1() {
         MyBinaryTree myBinaryTree = new MyBinaryTree();
 
         myBinaryTree.addNode(50);
@@ -16,9 +14,12 @@ public class MyBinaryTreeTest {
         myBinaryTree.addNode(40);
         myBinaryTree.addNode(20);
 
-        myBinaryTree.traverse();
+        myBinaryTree.inOrderTraverse();
 
+    }
 
+    @Test
+    public void addNodeAndInOrderTraversal_Example2() {
         MyBinaryTree myBinaryTree2 = new MyBinaryTree();
 
         myBinaryTree2.addNode(500);
@@ -31,6 +32,6 @@ public class MyBinaryTreeTest {
         myBinaryTree2.addNode(1);
         myBinaryTree2.addNode(210);
 
-        myBinaryTree2.traverse();
+        myBinaryTree2.inOrderTraverse();
     }
 }

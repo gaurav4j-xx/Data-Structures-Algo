@@ -3,9 +3,6 @@ package trees;
 import lombok.Data;
 import lombok.NonNull;
 
-import java.util.Collections;
-import java.util.List;
-
 public class MyBinaryTree {
     private Node root;
 
@@ -18,29 +15,23 @@ public class MyBinaryTree {
         }
     }
 
-    public void traverse() {
+    public void inOrderTraverse() {
         if (root == null) {
             System.out.println("Root is null");
         } else if (root != null && root.getLeftChild() == null && root.getRightChild() == null) {
             System.out.println(" Node Visited : " + root.getData());
         } else {
-            if (root.getLeftChild() != null) {
-                traverse(root.getLeftChild());
-            }
-            if (root.getRightChild() != null) {
-                traverse(root.getRightChild());
-            }
-            System.out.println(" Node Visited : " + root.getData());
+            inOrderTraverse(root);
         }
     }
 
-    private void traverse(Node node) {
+    private void inOrderTraverse(Node node) {
         if (node.getLeftChild() != null) {
-            traverse(node.getLeftChild());
+            inOrderTraverse(node.getLeftChild());
         }
         System.out.println(" Node Visited : " + node.getData());
         if (node.getRightChild() != null) {
-            traverse(node.getRightChild());
+            inOrderTraverse(node.getRightChild());
         }
     }
 
