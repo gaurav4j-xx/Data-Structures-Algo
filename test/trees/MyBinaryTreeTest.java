@@ -39,7 +39,8 @@ public class MyBinaryTreeTest {
     public void emptyTreeTraversal() {
         MyBinaryTree myBinaryTree = new MyBinaryTree();
         myBinaryTree.inOrderTraverse();
-
+        myBinaryTree.preOrderTraverse();
+        myBinaryTree.postOrderTraverse();
     }
 
     @Test
@@ -47,5 +48,41 @@ public class MyBinaryTreeTest {
         MyBinaryTree myBinaryTree = new MyBinaryTree();
         myBinaryTree.addNode(1);
         myBinaryTree.inOrderTraverse();
+        myBinaryTree.preOrderTraverse();
+        myBinaryTree.postOrderTraverse();
+    }
+
+    @Test
+    public void addNodeAndPreOrderTraversal_Example2() {
+        MyBinaryTree myBinaryTree = new MyBinaryTree();
+
+        myBinaryTree.addNode(500);
+        myBinaryTree.addNode(100);
+        myBinaryTree.addNode(30);
+        myBinaryTree.addNode(40);
+        myBinaryTree.addNode(50);
+        myBinaryTree.addNode(250);
+        myBinaryTree.addNode(300);
+        myBinaryTree.addNode(1);
+        myBinaryTree.addNode(210);
+
+        myBinaryTree.preOrderTraverse();
+    }
+
+    @Test
+    public void addNodeAndPostOrderTraversal_Example2() {
+        MyBinaryTree myBinaryTree = new MyBinaryTree();
+
+        myBinaryTree.addNode(500);
+        myBinaryTree.addNode(100);
+        myBinaryTree.addNode(30);
+        myBinaryTree.addNode(40);
+        myBinaryTree.addNode(50);
+        myBinaryTree.addNode(250);
+        myBinaryTree.addNode(300);
+        myBinaryTree.addNode(1);
+        myBinaryTree.addNode(210);
+
+        myBinaryTree.postOrderTraverse();
     }
 }

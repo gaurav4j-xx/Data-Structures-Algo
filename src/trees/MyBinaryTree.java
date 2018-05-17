@@ -35,7 +35,46 @@ public class MyBinaryTree {
         }
     }
 
+    public void preOrderTraverse() {
+        if (root == null) {
+            System.out.println("Root is null");
+        } else if (root != null && root.getLeftChild() == null && root.getRightChild() == null) {
+            System.out.println(" Node Visited : " + root.getData());
+        } else {
+            preOrderTraverse(root);
+        }
+    }
 
+    private void preOrderTraverse(Node node) {
+        System.out.println(" Node Visited : " + node.getData());
+        if (node.getLeftChild() != null) {
+            preOrderTraverse(node.getLeftChild());
+        }
+
+        if (node.getRightChild() != null) {
+            preOrderTraverse(node.getRightChild());
+        }
+    }
+    
+    public void postOrderTraverse() {
+        if (root == null) {
+            System.out.println("Root is null");
+        } else if (root != null && root.getLeftChild() == null && root.getRightChild() == null) {
+            System.out.println(" Node Visited : " + root.getData());
+        } else {
+            postOrderTraverse(root);
+        }
+    }
+
+    private void postOrderTraverse(Node node) {
+        if (node.getLeftChild() != null) {
+            postOrderTraverse(node.getLeftChild());
+        }
+        if (node.getRightChild() != null) {
+            postOrderTraverse(node.getRightChild());
+        }
+        System.out.println(" Node Visited : " + node.getData());
+    }
 
     private void traverseAndAddNode(Node node, Node nodeToAdd) {
         if (nodeToAdd.getData() < node.getData()) {
