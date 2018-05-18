@@ -31,7 +31,23 @@ public class MyBinaryTree implements Tree {
      * @param node
      */
     @Override
-    public Node findNode(Node node) {
+    public Node find(Node node) {
+        if (root != null && node != null) {
+            return findNode(root, node);
+        }
+        return null;
+    }
+
+    private Node findNode(Node search, Node nodeToSearch) {
+        if (search != null && nodeToSearch != null) {
+            if (search.getData() == nodeToSearch.getData()) {
+                return search;
+            } else if (nodeToSearch.getData() < search.getData()) {
+                return findNode(search.getLeftChild(), nodeToSearch);
+            } else {
+                return findNode(search.getRightChild(), nodeToSearch);
+            }
+        }
         return null;
     }
 

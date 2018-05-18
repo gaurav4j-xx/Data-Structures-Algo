@@ -14,7 +14,7 @@ public interface Tree {
      * Returns node if found, null otherwise.
      * @param node
      */
-    Node findNode(Node node);
+    Node find(Node node);
 
     /**
      * This method deletes the passed node from the tree.
