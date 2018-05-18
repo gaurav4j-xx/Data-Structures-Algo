@@ -1,13 +1,12 @@
-package trees;
+package trees.impl;
 
-import lombok.Data;
-import lombok.NonNull;
+import trees.api.Tree;
+import trees.model.Node;
 
-public class MyBinaryTree {
+public class MyBinaryTree implements Tree {
     private Node root;
 
-    public void addNode(int data) {
-        Node nodeToAdd = new Node(data);
+    public void addNode(Node nodeToAdd) {
         if (root == null) {
             root = nodeToAdd;
         } else {
@@ -23,6 +22,30 @@ public class MyBinaryTree {
         } else {
             inOrderTraverse(root);
         }
+    }
+
+    /**
+     * This method finds the provided node in the BST.
+     * Returns node if found, null otherwise.
+     *
+     * @param node
+     */
+    @Override
+    public Node findNode(Node node) {
+        return null;
+    }
+
+    /**
+     * This method deletes the passed node from the tree.
+     * Returns true if node was found and deleted,
+     * false otherwise.
+     *
+     * @param node
+     * @return
+     */
+    @Override
+    public boolean deleteNode(Node node) {
+        return false;
     }
 
     private void inOrderTraverse(Node node) {
@@ -93,11 +116,3 @@ public class MyBinaryTree {
     }
 }
 
-@Data
-class Node {
-    @NonNull
-    private int data;
-
-    private Node leftChild;
-    private Node rightChild;
-}
